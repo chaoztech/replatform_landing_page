@@ -1,0 +1,41 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.landing-page{
+    min-height: 100vh;
+}
+
+.rp-md-field {
+    width: 300px;
+    padding-bottom: 16px;
+}
+
+.service-chip {
+    background-color: rgba(92, 93, 232, 0.1);
+    color: #5c5de8;
+    border-radius: 100px;
+    padding: 4px 14px;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: var(--font-family);
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.section-heading {
+    font-size: 36px;
+    font-weight: 500;
+    font-family: var(--font-family);
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.11;
+    letter-spacing: normal;
+    color: #333;
+    text-wrap: nowrap;
+    margin: 0px;
+}

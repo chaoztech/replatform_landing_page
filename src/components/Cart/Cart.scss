@@ -1,0 +1,62 @@
+.cart-wrapper{
+    width: 350px;
+    height: 400px;
+    padding: 10px;
+    object-fit: contain;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: .3s all;
+    position: relative;
+    box-shadow: 0px 0px 1px 0px var(--primary-color);
+    box-sizing: content-box;
+
+    &:hover{
+        cursor: pointer;
+        box-shadow: 0px 0px 4px 0px var(--primary-color);
+    }
+    .blog-img{
+        height: 200px;
+        width: 100%;
+
+        img{
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+        }
+    }
+    .blog-date{
+        color: var(--primary-color);
+        font-family: var(--font-family);
+    }
+    .blog-title {
+        margin: 15px 0px;
+        font-family: var(--font-family);
+        color: var(--primary-color);
+        text-transform: capitalize;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    .blog-content {
+        width: 100%;
+        overflow: hidden;
+    
+        p {
+            width: 100%;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            color: var(--primary-color);
+            text-align: left;
+            font-family: var(--font-family);
+            margin: 8px 0px;
+            font-size: 18px;
+        }
+    }
+    
+}

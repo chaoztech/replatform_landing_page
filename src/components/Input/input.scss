@@ -1,0 +1,36 @@
+.rp-label{
+    color: #001C30;
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    display: inline-block;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+input{
+    display: flex;
+    align-items: center;
+    width:100%;
+    border-radius: 2px;
+    border: 1px solid rgba(67, 72, 92, 0.20);
+    padding: 6px 10px;
+    box-sizing: border-box;
+    outline: 0;
+    color: #001C30;
+    font-family: var(--font-family);
+    font-size: 14px;
+    height: 32px;
+    &::placeholder{
+        color: rgba(0, 0, 0, 0.20);
+        font-family: var(--font-family);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+    &:focus{
+        border: 1px solid #001C30;
+    }
+}

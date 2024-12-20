@@ -1,0 +1,346 @@
+@mixin anchorTag{
+  a {
+    position: relative;
+    display: table-cell;
+    text-align: center;
+    color: rgb(117, 117, 117);
+    text-decoration: none;
+    font-family: var(--font-family);
+    padding: 10px;
+    transition: 0.2s ease color;
+    font-size: 16px;
+    font-weight: 500;
+
+    &:hover{
+      color: var(--gray-color);
+    }
+  }
+
+  .dashboard-link{
+    .dashboard-button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--secondary-color);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 10px;
+      font-family: var(--font-family);
+      font-size: 15px;
+
+      .live-indicator {
+        margin: 0 auto;
+        height: 10px;
+        position: relative;
+        width: 10px;
+        border-radius: 100%;
+        margin-left: 10px;
+        /* Oval: */
+        background-image: linear-gradient(-180deg, #FFE27A 0%, #F689B9 100%);
+        box-shadow: 0 -2px 4px 0 rgba(255, 237, 186, 0.70), 0 2px 4px 0 rgba(242, 141, 185, 0.70), inset 0 1px 0 0 rgba(255, 245, 217, 0.40);
+        transition: transform 200ms ease-out;
+      
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.4);
+        }
+      
+        &:before {
+          content: "";
+          animation: ripple 4s infinite;
+          animation-timing-function: ease-out;
+          height: 500%;
+          width: 500%;
+          position: absolute;
+          top: -20px;
+          left: -20px;
+          display: block;
+          box-sizing: border-box;
+          border-radius: 100%;
+          // border:1px solid #F28DB9;
+          box-shadow: 0 0 3px 3px #F28DB9;
+        }
+      
+        &:after {
+          content: "";
+          animation: ripple-delayed 4s infinite;
+          animation-timing-function: ease-out;
+          height: 500%;
+          width: 500%;
+          position: absolute;
+          top: -20px;
+          left: -20px;
+          display: block;
+          box-sizing: border-box;
+          border-radius: 100%;
+          // border:1px solid #F28DB9;
+          box-shadow: 0 0 3px 3px #F28DB9;
+        }
+      }
+    }
+  }
+
+  .login-link{
+    .login-btn{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--primary-color);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 10px;
+      font-family: var(--font-family);
+      font-size: 15px;
+    }
+  }
+
+}
+
+.navigation-bar-wrapper {
+  position: fixed;
+  transform: translateY(0);
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index:20;
+  background-color: var(--white-color);
+  box-sizing: border-box;
+  padding: 40px 300px;
+  &.sticky {
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 0.4s ease;
+
+  }
+
+  .left-part{
+    .replatform-logo{
+      // padding-left: 200px;
+      img{
+        cursor: pointer;
+        height: 50px;
+      }
+    }
+  }
+
+  .navigation-link-section {
+    // padding-right: 200px;
+    ul{
+      list-style: none;
+      li{
+        display: inline;
+        @include anchorTag();
+      }
+    }
+  }
+
+  .hamburger-menu{
+    display: none;
+    margin-right: 5px;
+    img{
+      height: 50px;
+      cursor: pointer;
+    }
+  }
+}
+
+.navigation-mobile-view{
+  width: 100%;
+  backdrop-filter: blur(3.5px);
+  position: fixed;
+  transform: translateY(0);
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index: 1000;
+  background-color: var(--white-color);
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 0.4s ease;
+
+  }
+
+  .left-part{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 40px;
+    .replatform-logo{
+      // padding-left: 200px;
+      img{
+        cursor: pointer;
+        height: 50px;
+      }
+    }
+  }
+
+  
+  .navigation-link-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: var(--white-color);
+    box-shadow: 0px 0px 1px 0px var(--primary-color);
+    margin: 0px 2px 0px;
+    min-height: 100vh;
+    ul{
+      margin: 0px;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+
+      li{
+        display: block;
+        @include anchorTag();
+      }
+    }
+  }
+
+
+  .hamburger-menu{
+    margin-right: 5px;
+    display: flex;
+    flex-direction: row-reverse;
+    img{
+      height: 50px;
+      cursor: pointer;
+    }
+    .close{
+      padding: 10px;
+      height: 40px !important;
+    }
+  }
+
+}
+
+@media screen and (max-width: 1300px) {
+  .navigation-bar-wrapper{
+    padding: 40px;
+  }
+
+}
+
+@media screen and (max-width: 920px) {
+  .navigation-bar-wrapper{
+    .navigation-link-section{
+      display: none;
+    }
+    .hamburger-menu{
+      display: block;
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .navigation-bar-wrapper{
+    padding: 40px 12px;
+  }
+
+  .navigation-mobile-view{
+    .left-part{
+      padding: 10px 12px;
+    }
+  }
+
+}
+
+@media screen and (min-width: 1080px) {
+  .navigation-bar-wrapper{
+    .navigation-link-section{
+      display: block;
+    }
+    .hamburger-menu{
+      display: none;
+    }
+  }
+
+  .navigation-mobile-view{
+    display: none;
+    .navigation-link-section{
+      display: none;
+    }
+    .hamburger-menu{
+      display: none;
+    }
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes live {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  100% {
+    transform: scale(3.5, 3.5);
+    background-color: rgba(red, 0);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+
+  2.5% {
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  100% {
+    // Puts delay between animation loops
+    // Must be equal to previous step 
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple-delayed {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+
+  6% {
+    opacity: 0.6;
+    transform: scale(0.1);
+  }
+
+  100% {
+    // Puts delay between animation loops
+    // Must be equal to previous step 
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}

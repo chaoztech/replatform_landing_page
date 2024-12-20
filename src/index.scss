@@ -1,0 +1,114 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+@import './assets/scss/_mixins.scss';
+:root {
+  --primary-color: #04152d; /* Define your global color variable */
+  --secondary-color: #C76F4E;
+  --white-color: #ffffff;
+  --royalblue-color: #4169e1;
+  --green-color: #4a934a;
+  // --grey-color: #ced4da;
+  --grey-color: #9E9E9E;
+  --light-grey-color: #e0e0e0;
+  --black-color: #000000;
+  --red-color: #f33030;
+  --purple-color: #8884d8;
+  --yellow-color: #FFD700;
+  --background-color: #FAFBFF;
+  --gradient: linear-gradient(98.37deg, #C76F4E .99%, #da2f68 100%);
+  --font-family:-apple-system,system-ui,"Segoe UI",Inter,Ubuntu,sans-serif;
+}
+
+
+:root {
+  --col-bg: 10,10,10;
+  --col-fg-p: 99,102,241;
+  --col-fg-s: 184,171,143;
+  --col-text: 220,220,220;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+}
+
+/* common styling */
+.flex_row{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex_col{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.flex_row_space_between{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-col-item-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex_align_center_HV{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex_row_align_center{
+  display: flex;
+  align-items: center;
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
+.flex_row_content_FE{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.flex-col-item-center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.w-100{
+  width:100%;
+}
+
+.button_32_primary {
+  @include button-styles(var(--white-color), var(--primary-color));
+}
+
+.button_32_secondary {
+  @include button-styles(var(--primary-color), var(--white-color));
+}
+
+.button_32_primary:disabled {
+  background-color: rgba(#004046, 0.2); /* Light gray */
+  border-color: rgba(#004046, 0.1);
+  cursor: not-allowed;
+}
+
+.home-page{
+  max-height: calc(100vmin - 0px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  @include custom-scrollbar;
+}
+.center{
+  text-align: center;
+}
