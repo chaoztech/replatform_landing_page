@@ -22,9 +22,9 @@ function App() {
         element: <BlogPage />
       }
     ],
-    {
-      basename: "/replatform_landing_page"
-    }
+    // {
+    //   basename: "/replatform_landing_page"
+    // }
   );
 
   return (
