@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import logo from "../../../../assets/RePlatform_logo.png";
 import hamburgerLogo from "../../../../assets/commonImages/hamburger-full-width.svg";
@@ -8,8 +8,7 @@ import closeLogo from "../../../../assets/commonImages/close.svg";
 import "./NavigationBar.scss";
 
 const NavigationBar = () => {
-    let location = useLocation()
-    const isIncludeBlog = location.pathname.includes("/blogs");
+
     const [isSticky, setIsSticky] = useState(false);
     const [isMobileView, setIsMobileView] = useState(false);
 
@@ -42,7 +41,7 @@ const NavigationBar = () => {
                         <a href="/#blog">Blog</a>
                     </li>
                     <li>
-                        <a href="/#project">Project</a>
+                        <a href="https://chaoztech.github.io/portfolio/" target='_blank'>Project</a>
                     </li>
                     <li>
                         <a href="#contact">Contact</a>
